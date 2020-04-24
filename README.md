@@ -18,6 +18,12 @@ RFX2401C Mode Truth Table:
 | 0 | 1 | RX Active
 | 0 | 0 | Chip shutdown
 
+CC2530 Control Connections **UNTESTED**:
+| CC2530 | RFX2401C |
+| --- | --- |
+| P1_0 | RXEN
+| P1_1 | TXEN
+
 ### CC2592
 [CC2592](https://lcsc.com/product-detail/RF-Transceiver-ICs_Texas-Instruments_CC2592RGVR_Texas-Instruments-TI-CC2592RGVR_C53274.html/?href=jlc-SMT)
 
