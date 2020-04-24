@@ -1,14 +1,50 @@
-# Parts
-## RF
-[CC2530F256
-(radio)](https://lcsc.com/product-detail/RF-Transceiver-ICs_Texas-Instruments_CC2530F256RHAR_Texas-Instruments-TI-CC2530F256RHAR_C9120.html/?href=jlc-SMT)
-[RFX2401C
-(PA)](https://lcsc.com/product-detail/RF-Transceiver-ICs_Skyworks-Solutions_RFX2401C_Skyworks-Solutions-RFX2401C_C19213.html/?href=jlc-SMT)
+# ESP8266 + CC2530
+Board to integrate an ESP8266 + CC2530 + RF Front end
 
-## ESP8266
-### Option 1
+# RF Parts
+[CC2530F256(radio)](https://lcsc.com/product-detail/RF-Transceiver-ICs_Texas-Instruments_CC2530F256RHAR_Texas-Instruments-TI-CC2530F256RHAR_C9120.html/?href=jlc-SMT)
+
+## RF Front Ends
+### RFX2401C
+[RFX2401C](https://lcsc.com/product-detail/RF-Transceiver-ICs_Skyworks-Solutions_RFX2401C_Skyworks-Solutions-RFX2401C_C19213.html/?href=jlc-SMT)
+
+> This is the RF front end that was on the 2530PA module I got from
+> [Bangood](https://www.banggood.com/CC2530-UART-Wireless-Core-Development-Board-CC2530F256-Serial-Port-Wireless-Module-2_4GHz-For-Zigbee-p-1445025.html?utm_design=41&utm_source=emarsys&utm_medium=Neworder171109&utm_campaign=trigger-emarsys&utm_content=winna&sc_src=email_2675773&sc_eh=ddc2dc193b00c4611&sc_llid=10757429&sc_lid=105229698&sc_uid=wcY1TUr67W&cur_warehouse=CN),
+
+RFX2401C Control
+| TXEN | RXEN | Mode |
+| --- | --- | --- |
+| 1 | X | TX Active
+| 0 | 1 | RX Active
+| 0 | 0 | Chip shutdown
+
+### CC2592
+[CC2592](https://lcsc.com/product-detail/RF-Transceiver-ICs_Texas-Instruments_CC2592RGVR_Texas-Instruments-TI-CC2592RGVR_C53274.html/?href=jlc-SMT)
+
+CC2592 Control
+| PA_EN | LNA_EN | HGM | Mode |
+| --- | --- | --- | --- |
+| 0 | 0 | X | Power Down
+| X | 1 | 0 | RX Low-gain
+| X | 1 | 1 | RX High-gain
+| 1 | 0 | X | TX
+
+CC2530 Control Connections
+[Source](https://processors.wiki.ti.com/index.php/Enabling_the_Support_of_CC259x_PA/LNA_with_Z-Stack-Home)
+| CC2592 | CC2530 |
+| --- | --- |
+| EN | P1_0
+| PAEN | P1_1
+| HGM | P0_7
+
+### CC2591
+This part is not recommended for new designs, and is out of stock at LCSC
+
+# ESP8266
+## Option 1
 Use Wemos D1-mini and interface via header
-### Option 2
+
+## Option 2
 Use ESP8266MOD and integrate onto board
 [ESP8266MOD](https://lcsc.com/product-detail/WIFI-Modules_ESP-12F-ESP8266MOD_C82891.html)
 > not available for JLPCB to assemble
@@ -16,13 +52,7 @@ Use ESP8266MOD and integrate onto board
 [CH340C (USB-UART
 bridge)](https://lcsc.com/product-detail/USB_CH340C_C84681.html/?href=jlc-SMT)
 
-
-### CC2530 Notes
-#### CC2530PA from banggood's connections:
-TXEN -> P1_5
-RXEN -> P1_4
-
-#### CC2530/CC2591 connections:
-PA_EN -> P1_1
-LNA_EN (EN) -> P1_4
-[source](http://www.ti.com/lit/an/swra308a/swra308a.pdf)
+# CC2530PA Notes
+## CC2530PA from banggood's connections:
+RFX2401C TXEN -> CC2530 P1_5
+RFX2401C RXEN -> CC2530 P1_4
