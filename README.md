@@ -38,8 +38,8 @@ CC2592 Mode Truth Table:
 CC2530 Control Connections:
 | CC2592 | CC2530 |
 | --- | --- |
-| EN | P1_0
-| PAEN | P1_1
+| EN (LNA_EN) | P1_0
+| PA_EN | P1_1
 | HGM | P0_7
 [Source](https://processors.wiki.ti.com/index.php/Enabling_the_Support_of_CC259x_PA/LNA_with_Z-Stack-Home)
 
