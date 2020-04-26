@@ -64,3 +64,7 @@ CC2530PA from banggood's connections:
 | --- | --- |
 | TXEN | P1_5
 | RXEN | P1_4
+
+> I modified the z-stack zigbee firmware to have TXEN on PA1_5 and RXEN on P1_4
+> and improved RF performance over the stock CC2530_CC2592 firmware, and seemed
+> to be better than the CC2531 USB stick I have
