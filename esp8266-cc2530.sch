@@ -17,8 +17,8 @@ $Comp
 L MCU_Module:WeMos_D1_mini U?
 U 1 1 5EA117C8
 P 1900 3100
-F 0 "U?" H 1900 2211 50  0000 C CNN
-F 1 "WeMos_D1_mini" H 1900 2120 50  0000 C CNN
+F 0 "U?" H 1600 3900 50  0000 C CNN
+F 1 "WeMos_D1_mini" H 1400 2300 50  0000 C CNN
 F 2 "Module:WEMOS_D1_mini_light" H 1900 1950 50  0001 C CNN
 F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 50  1950 50  0001 C CNN
 	1    1900 3100
@@ -292,8 +292,6 @@ Wire Wire Line
 	8000 2900 8000 3050
 Wire Wire Line
 	8000 3200 7900 3200
-Wire Wire Line
-	8150 3050 8000 3050
 Connection ~ 8000 3050
 Wire Wire Line
 	8000 3050 8000 3200
@@ -588,7 +586,7 @@ Wire Wire Line
 	9800 2050 9800 2450
 Connection ~ 9800 2450
 Text Notes 8500 950  0    50   ~ 0
-TODO\n* Figure out TX/RX En pinout
+TODO\n* Figure out TX/RX En pinout\n* add cc2530 programming header\n* cc2530 regulator?
 $Comp
 L Device:C C?
 U 1 1 5EA96D19
@@ -739,8 +737,8 @@ $Comp
 L projectLib:CC2592 U?
 U 1 1 5EACFB8A
 P 8600 5950
-F 0 "U?" H 9094 6396 50  0000 L CNN
-F 1 "CC2592" H 9094 6305 50  0000 L CNN
+F 0 "U?" H 9000 7000 50  0000 L CNN
+F 1 "CC2592" H 8550 6300 50  0000 L CNN
 F 2 "" H 8600 5950 50  0001 C CNN
 F 3 "" H 8600 5950 50  0001 C CNN
 	1    8600 5950
@@ -1082,4 +1080,60 @@ Text Label 7250 5700 2    50   ~ 0
 P1_0
 Text Label 7250 6000 2    50   ~ 0
 P1_1
+$Comp
+L Device:C C?
+U 1 1 5EB635D2
+P 8200 1600
+F 0 "C?" V 7948 1600 50  0000 C CNN
+F 1 "DNP" V 8039 1600 50  0000 C CNN
+F 2 "" H 8238 1450 50  0001 C CNN
+F 3 "~" H 8200 1600 50  0001 C CNN
+	1    8200 1600
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EB77ED4
+P 9750 1600
+F 0 "R?" H 9680 1554 50  0000 R CNN
+F 1 "DNP" H 9680 1645 50  0000 R CNN
+F 2 "" V 9680 1600 50  0001 C CNN
+F 3 "~" H 9750 1600 50  0001 C CNN
+	1    9750 1600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9900 3050 10300 3050
+Text Label 8250 3350 2    50   ~ 0
+P1_1
+Text Label 8250 3650 2    50   ~ 0
+P1_0
+Wire Wire Line
+	9900 1600 10300 1600
+Wire Wire Line
+	8350 1600 9600 1600
+Wire Wire Line
+	8000 3050 8050 3050
+Wire Wire Line
+	10300 1600 10300 3050
+Wire Wire Line
+	8050 1600 8050 3050
+Connection ~ 8050 3050
+Wire Wire Line
+	8050 3050 8150 3050
+$Comp
+L power:GND #PWR?
+U 1 1 5EBADD70
+P 1900 3900
+F 0 "#PWR?" H 1900 3650 50  0001 C CNN
+F 1 "GND" H 1905 3727 50  0000 C CNN
+F 2 "" H 1900 3900 50  0001 C CNN
+F 3 "" H 1900 3900 50  0001 C CNN
+	1    1900 3900
+	1    0    0    -1  
+$EndComp
+Text Label 2300 3000 0    50   ~ 0
+ESP_RX
+Text Label 2300 3100 0    50   ~ 0
+ESP_TX
 $EndSCHEMATC
