@@ -48,6 +48,7 @@ This part is not recommended for new designs, and is out of stock at LCSC
 
 ## Regulator
 [AMS1117-3.3](https://lcsc.com/product-detail/Low-Dropout-Regulators-LDO_AMS_AMS1117-3-3_AMS1117-3-3_C6186.html/?href=jlc-SMT)
+
 AMS1117-3.3 Bypass. >22uF Tantalum 
 [100uF 6.3V](https://lcsc.com/product-detail/Tantalum-Capacitors_AVX_TAJB107K006RNJ_100uF-107-10-6-3V_C16133.html/?href=jlc-SMT)
 
