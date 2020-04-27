@@ -580,7 +580,7 @@ Wire Wire Line
 	9800 2050 9800 2450
 Connection ~ 9800 2450
 Text Notes 8500 950  0    50   ~ 0
-TODO\n* cc2530 regulator?
+TODO\n* add SMA connector
 $Comp
 L Device:C C?
 U 1 1 5EA96D19
@@ -1229,4 +1229,115 @@ F 3 "" H 4800 1700 50  0001 C CNN
 	1    4800 1700
 	1    0    0    -1  
 $EndComp
+$Comp
+L Regulator_Linear:AMS1117-3.3 U?
+U 1 1 5EC2B8A4
+P 2850 1750
+F 0 "U?" H 2850 1992 50  0000 C CNN
+F 1 "AMS1117-3.3" H 2850 1901 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2850 1950 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 2950 1500 50  0001 C CNN
+	1    2850 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EC30553
+P 2850 1300
+F 0 "R?" H 2780 1254 50  0000 R CNN
+F 1 "DNP" H 2780 1345 50  0000 R CNN
+F 2 "" V 2780 1300 50  0001 C CNN
+F 3 "~" H 2850 1300 50  0001 C CNN
+	1    2850 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EC30A4C
+P 3400 1900
+F 0 "C?" H 3286 1854 50  0000 R CNN
+F 1 "1u" H 3286 1945 50  0000 R CNN
+F 2 "" H 3438 1750 50  0001 C CNN
+F 3 "~" H 3400 1900 50  0001 C CNN
+	1    3400 1900
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:CP1 C?
+U 1 1 5EC31ECE
+P 3650 1900
+F 0 "C?" H 3765 1946 50  0000 L CNN
+F 1 "100u" H 3765 1855 50  0000 L CNN
+F 2 "" H 3650 1900 50  0001 C CNN
+F 3 "~" H 3650 1900 50  0001 C CNN
+	1    3650 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EC3261B
+P 2850 2050
+F 0 "#PWR?" H 2850 1800 50  0001 C CNN
+F 1 "GND" V 2855 1922 50  0000 R CNN
+F 2 "" H 2850 2050 50  0001 C CNN
+F 3 "" H 2850 2050 50  0001 C CNN
+	1    2850 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EC32AB8
+P 3650 2050
+F 0 "#PWR?" H 3650 1800 50  0001 C CNN
+F 1 "GND" V 3655 1922 50  0000 R CNN
+F 2 "" H 3650 2050 50  0001 C CNN
+F 3 "" H 3650 2050 50  0001 C CNN
+	1    3650 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EC32D7E
+P 3400 2050
+F 0 "#PWR?" H 3400 1800 50  0001 C CNN
+F 1 "GND" V 3405 1922 50  0000 R CNN
+F 2 "" H 3400 2050 50  0001 C CNN
+F 3 "" H 3400 2050 50  0001 C CNN
+	1    3400 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 1750 3250 1750
+Connection ~ 3400 1750
+Wire Wire Line
+	3400 1750 3650 1750
+$Comp
+L power:VCC #PWR?
+U 1 1 5EC3EB30
+P 3400 1750
+F 0 "#PWR?" H 3400 1600 50  0001 C CNN
+F 1 "VCC" H 3417 1923 50  0000 C CNN
+F 2 "" H 3400 1750 50  0001 C CNN
+F 3 "" H 3400 1750 50  0001 C CNN
+	1    3400 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 1750 2450 1750
+Wire Wire Line
+	2000 1750 2000 2300
+Wire Wire Line
+	2700 1300 2450 1300
+Wire Wire Line
+	2450 1300 2450 1750
+Connection ~ 2450 1750
+Wire Wire Line
+	2450 1750 2000 1750
+Wire Wire Line
+	3000 1300 3250 1300
+Wire Wire Line
+	3250 1300 3250 1750
+Connection ~ 3250 1750
+Wire Wire Line
+	3250 1750 3400 1750
 $EndSCHEMATC
