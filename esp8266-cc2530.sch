@@ -714,45 +714,10 @@ Wire Wire Line
 	5000 3950 5050 3950
 Text Label 5000 3950 2    50   ~ 0
 ESP_RX
-$Comp
-L Device:C C17
-U 1 1 5EB635D2
-P 8200 1600
-F 0 "C17" V 7948 1600 50  0000 C CNN
-F 1 "DNP" V 8039 1600 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 8238 1450 50  0001 C CNN
-F 3 "~" H 8200 1600 50  0001 C CNN
-	1    8200 1600
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5EB77ED4
-P 9750 1600
-F 0 "R5" H 9680 1554 50  0000 R CNN
-F 1 "DNP" H 9680 1645 50  0000 R CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9680 1600 50  0001 C CNN
-F 3 "~" H 9750 1600 50  0001 C CNN
-	1    9750 1600
-	0    1    1    0   
-$EndComp
 Text Label 8250 3350 2    50   ~ 0
 P1_1
 Text Label 8250 3650 2    50   ~ 0
 P1_0
-Wire Wire Line
-	9900 1600 10300 1600
-Wire Wire Line
-	8350 1600 9600 1600
-Wire Wire Line
-	8000 3050 8050 3050
-Wire Wire Line
-	10300 1600 10300 3050
-Wire Wire Line
-	8050 1600 8050 3050
-Connection ~ 8050 3050
-Wire Wire Line
-	8050 3050 8150 3050
 $Comp
 L power:GND #PWR0129
 U 1 1 5EBADD70
@@ -774,7 +739,7 @@ U 1 1 5EBB27BD
 P 1200 950
 F 0 "J1" H 1425 1325 50  0000 C CNN
 F 1 "CC2530_programmingHeader" H 1425 1234 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical_SMD" H 2100 750 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD" H 2100 750 50  0001 C CNN
 F 3 "" H 2100 750 50  0001 C CNN
 F 4 "C124391" H 1200 950 50  0001 C CNN "LCSC"
 F 5 "No JLCPCB Assembly" H 1200 950 50  0001 C CNN "JLCPCB Basic"
@@ -799,17 +764,16 @@ $EndComp
 $Comp
 L power:VCC #PWR02
 U 1 1 5EBCB7BA
-P 2200 900
-F 0 "#PWR02" H 2200 750 50  0001 C CNN
-F 1 "VCC" H 2217 1073 50  0000 C CNN
-F 2 "" H 2200 900 50  0001 C CNN
-F 3 "" H 2200 900 50  0001 C CNN
-	1    2200 900 
+P 2600 900
+F 0 "#PWR02" H 2600 750 50  0001 C CNN
+F 1 "VCC" H 2617 1073 50  0000 C CNN
+F 2 "" H 2600 900 50  0001 C CNN
+F 3 "" H 2600 900 50  0001 C CNN
+	1    2600 900 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2000 900  2200 900 
-NoConn ~ 2000 800 
+	2000 900  2450 900 
 Text Label 2000 1050 0    50   ~ 0
 P2_2
 Text Label 2000 1150 0    50   ~ 0
@@ -1107,7 +1071,6 @@ F 3 " ~" H 10500 3050 50  0001 C CNN
 	1    10500 3050
 	1    0    0    -1  
 $EndComp
-Connection ~ 10300 3050
 $Comp
 L power:GND #PWR0120
 U 1 1 5ED9D9C1
@@ -1132,4 +1095,26 @@ F 5 "Y" H 6550 3650 50  0001 C CNN "JLCPCB Basic"
 	1    6550 3650
 	1    0    0    1   
 $EndComp
+Wire Wire Line
+	8000 3050 8150 3050
+$Comp
+L Device:R R5
+U 1 1 5EAF2D38
+P 2250 800
+F 0 "R5" H 2180 754 50  0000 R CNN
+F 1 "DNP" H 2180 845 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2180 800 50  0001 C CNN
+F 3 "~" H 2250 800 50  0001 C CNN
+	1    2250 800 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2100 800  2000 800 
+Wire Wire Line
+	2400 800  2450 800 
+Wire Wire Line
+	2450 800  2450 900 
+Connection ~ 2450 900 
+Wire Wire Line
+	2450 900  2600 900 
 $EndSCHEMATC
