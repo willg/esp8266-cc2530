@@ -582,7 +582,7 @@ Wire Wire Line
 	9800 2050 9800 2400
 Connection ~ 9800 2400
 Text Notes 8500 950  0    50   ~ 0
-TODO\n* add SMA connector\n* add test points
+TODO\n* check SMA connector footprint\n* add test points
 $Comp
 L Device:C C3
 U 1 1 5EA96D19
@@ -1109,4 +1109,27 @@ Wire Wire Line
 	10000 3050 10300 3050
 Text Notes 8200 2600 0    50   ~ 0
 C18 was 2.2pF in CC2530 \nreference design
+$Comp
+L Connector:Conn_Coaxial J2
+U 1 1 5ED9BD71
+P 10500 3050
+F 0 "J2" H 10600 3025 50  0000 L CNN
+F 1 "Conn_Coaxial" H 10600 2934 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 10500 3050 50  0001 C CNN
+F 3 " ~" H 10500 3050 50  0001 C CNN
+	1    10500 3050
+	1    0    0    -1  
+$EndComp
+Connection ~ 10300 3050
+$Comp
+L power:GND #PWR0120
+U 1 1 5ED9D9C1
+P 10500 3250
+F 0 "#PWR0120" H 10500 3000 50  0001 C CNN
+F 1 "GND" H 10505 3077 50  0000 C CNN
+F 2 "" H 10500 3250 50  0001 C CNN
+F 3 "" H 10500 3250 50  0001 C CNN
+	1    10500 3250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
