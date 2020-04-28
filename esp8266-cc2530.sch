@@ -648,19 +648,6 @@ F 3 "" H 6000 1950 50  0001 C CNN
 	1    6000 1950
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Device:C C12
-U 1 1 5EAAC4F3
-P 6550 3650
-F 0 "C12" H 6436 3604 50  0000 R CNN
-F 1 "1u" H 6436 3695 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 6588 3500 50  0001 C CNN
-F 3 "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21B105KBFNNNE_1uF-105-10-50V_C28323.html/?href=jlc-SMT" H 6550 3650 50  0001 C CNN
-F 4 "C28323" H 6550 3650 50  0001 C CNN "LCSC"
-F 5 "Y" H 6550 3650 50  0001 C CNN "JLCPCB Basic"
-	1    6550 3650
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	6350 3500 6550 3500
 Connection ~ 6350 3500
@@ -1131,5 +1118,18 @@ F 2 "" H 10500 3250 50  0001 C CNN
 F 3 "" H 10500 3250 50  0001 C CNN
 	1    10500 3250
 	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C12
+U 1 1 5EAAC4F3
+P 6550 3650
+F 0 "C12" H 6436 3604 50  0000 R CNN
+F 1 "1u" H 6436 3695 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6588 3500 50  0001 C CNN
+F 3 "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21B105KBFNNNE_1uF-105-10-50V_C28323.html/?href=jlc-SMT" H 6550 3650 50  0001 C CNN
+F 4 "C28323" H 6550 3650 50  0001 C CNN "LCSC"
+F 5 "Y" H 6550 3650 50  0001 C CNN "JLCPCB Basic"
+	1    6550 3650
+	1    0    0    1   
 $EndComp
 $EndSCHEMATC
