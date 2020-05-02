@@ -721,17 +721,17 @@ P1_0
 $Comp
 L power:GND #PWR0129
 U 1 1 5EBADD70
-P 1900 3900
-F 0 "#PWR0129" H 1900 3650 50  0001 C CNN
-F 1 "GND" H 1905 3727 50  0000 C CNN
-F 2 "" H 1900 3900 50  0001 C CNN
-F 3 "" H 1900 3900 50  0001 C CNN
-	1    1900 3900
+P 2050 3900
+F 0 "#PWR0129" H 2050 3650 50  0001 C CNN
+F 1 "GND" H 2055 3727 50  0000 C CNN
+F 2 "" H 2050 3900 50  0001 C CNN
+F 3 "" H 2050 3900 50  0001 C CNN
+	1    2050 3900
 	1    0    0    -1  
 $EndComp
-Text Label 2300 3000 0    50   ~ 0
+Text Label 2450 3000 0    50   ~ 0
 ESP_RX
-Text Label 2300 3100 0    50   ~ 0
+Text Label 2450 3100 0    50   ~ 0
 ESP_TX
 $Comp
 L projectLib:CC2530_programmingHeader J1
@@ -941,7 +941,7 @@ F 3 "" H 3400 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2000 1750 2000 2300
+	2150 1750 2150 2300
 Wire Wire Line
 	3000 1300 3250 1300
 Wire Wire Line
@@ -952,25 +952,21 @@ Wire Wire Line
 $Comp
 L projectLib:WeMos_D1_mini U1
 U 1 1 5EC6ED24
-P 1900 3100
-F 0 "U1" H 1650 3850 50  0000 C CNN
-F 1 "WeMos_D1_mini" H 1600 2350 50  0000 C CNN
-F 2 "Module:WEMOS_D1_mini_light" H 1900 1950 50  0001 C CNN
-F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 50  1950 50  0001 C CNN
-	1    1900 3100
+P 2050 3100
+F 0 "U1" H 1800 3850 50  0000 C CNN
+F 1 "WeMos_D1_mini" H 1750 2350 50  0000 C CNN
+F 2 "esp8266-cc2530:WEMOS_D1_mini_smt" H 2050 1950 50  0001 C CNN
+F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 200 1950 50  0001 C CNN
+	1    2050 3100
 	-1   0    0    -1  
 $EndComp
-NoConn ~ 2300 2700
-NoConn ~ 1500 2600
-NoConn ~ 1500 2700
-NoConn ~ 1500 2800
-NoConn ~ 1500 2900
-NoConn ~ 1500 3000
-NoConn ~ 1500 3100
-NoConn ~ 1500 3200
-NoConn ~ 1500 3300
-NoConn ~ 1500 3400
-NoConn ~ 1500 3500
+NoConn ~ 2450 2700
+NoConn ~ 1650 2600
+NoConn ~ 1650 2700
+NoConn ~ 1650 3200
+NoConn ~ 1650 3300
+NoConn ~ 1650 3400
+NoConn ~ 1650 3500
 NoConn ~ 4750 2300
 NoConn ~ 4850 2300
 NoConn ~ 4950 2300
@@ -985,13 +981,13 @@ NoConn ~ 4950 3750
 NoConn ~ 5250 3750
 NoConn ~ 5350 3750
 Wire Wire Line
-	2000 1750 2550 1750
+	2150 1750 2550 1750
 Wire Wire Line
 	2150 1300 2150 1650
 Wire Wire Line
-	2150 1650 1800 1650
+	2150 1650 1950 1650
 Wire Wire Line
-	1800 1650 1800 2300
+	1950 1650 1950 2300
 Wire Wire Line
 	2150 1300 2700 1300
 Text Label 3950 3400 2    50   ~ 0
@@ -1117,4 +1113,30 @@ Wire Wire Line
 Connection ~ 2450 900 
 Wire Wire Line
 	2450 900  2600 900 
+$Comp
+L power:GND #PWR0121
+U 1 1 5EAE54B3
+P 1500 3100
+F 0 "#PWR0121" H 1500 2850 50  0001 C CNN
+F 1 "GND" H 1505 2927 50  0000 C CNN
+F 2 "" H 1500 3100 50  0001 C CNN
+F 3 "" H 1500 3100 50  0001 C CNN
+	1    1500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 3100 1650 3100
+Wire Wire Line
+	1650 2800 1650 2900
+Connection ~ 1650 3100
+Connection ~ 1650 2900
+Wire Wire Line
+	1650 2900 1650 3000
+Connection ~ 1650 3000
+Wire Wire Line
+	1650 3000 1650 3100
+Text Notes 600  2600 0    50   ~ 10
+***NOTE***
+Text Notes 500  3050 0    50   ~ 0
+When assembling WeMos\nRemove pins 11-14 from \nheader.  \nThey're tied to ground to\nimprove RF layout
 $EndSCHEMATC
