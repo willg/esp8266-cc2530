@@ -582,7 +582,7 @@ Wire Wire Line
 	9800 2050 9800 2400
 Connection ~ 9800 2400
 Text Notes 8500 950  0    50   ~ 0
-TODO\n* check SMA connector footprint\n* add test points
+TODO\n* add test points\n* check usb pinout
 $Comp
 L Device:C C3
 U 1 1 5EA96D19
@@ -718,20 +718,9 @@ Text Label 8250 3350 2    50   ~ 0
 P1_1
 Text Label 8250 3650 2    50   ~ 0
 P1_0
-$Comp
-L power:GND #PWR0129
-U 1 1 5EBADD70
-P 2050 3900
-F 0 "#PWR0129" H 2050 3650 50  0001 C CNN
-F 1 "GND" H 2055 3727 50  0000 C CNN
-F 2 "" H 2050 3900 50  0001 C CNN
-F 3 "" H 2050 3900 50  0001 C CNN
-	1    2050 3900
-	1    0    0    -1  
-$EndComp
-Text Label 2450 3000 0    50   ~ 0
-ESP_RX
 Text Label 2450 3100 0    50   ~ 0
+ESP_RX
+Text Label 2450 3200 0    50   ~ 0
 ESP_TX
 $Comp
 L projectLib:CC2530_programmingHeader J1
@@ -941,32 +930,12 @@ F 3 "" H 3400 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2150 1750 2150 2300
-Wire Wire Line
 	3000 1300 3250 1300
 Wire Wire Line
 	3250 1300 3250 1750
 Connection ~ 3250 1750
 Wire Wire Line
 	3250 1750 3400 1750
-$Comp
-L projectLib:WeMos_D1_mini U1
-U 1 1 5EC6ED24
-P 2050 3100
-F 0 "U1" H 1800 3850 50  0000 C CNN
-F 1 "WeMos_D1_mini" H 1750 2350 50  0000 C CNN
-F 2 "esp8266-cc2530:WEMOS_D1_mini_smt" H 2050 1950 50  0001 C CNN
-F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 200 1950 50  0001 C CNN
-	1    2050 3100
-	-1   0    0    -1  
-$EndComp
-NoConn ~ 2450 2700
-NoConn ~ 1650 2600
-NoConn ~ 1650 2700
-NoConn ~ 1650 3200
-NoConn ~ 1650 3300
-NoConn ~ 1650 3400
-NoConn ~ 1650 3500
 NoConn ~ 4750 2300
 NoConn ~ 4850 2300
 NoConn ~ 4950 2300
@@ -981,13 +950,11 @@ NoConn ~ 4950 3750
 NoConn ~ 5250 3750
 NoConn ~ 5350 3750
 Wire Wire Line
-	2150 1750 2550 1750
+	2150 1750 2400 1750
 Wire Wire Line
 	2150 1300 2150 1650
 Wire Wire Line
 	2150 1650 1950 1650
-Wire Wire Line
-	1950 1650 1950 2300
 Wire Wire Line
 	2150 1300 2700 1300
 Text Label 3950 3400 2    50   ~ 0
@@ -1116,27 +1083,140 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0121
 U 1 1 5EAE54B3
-P 1500 3100
-F 0 "#PWR0121" H 1500 2850 50  0001 C CNN
-F 1 "GND" H 1505 2927 50  0000 C CNN
-F 2 "" H 1500 3100 50  0001 C CNN
-F 3 "" H 1500 3100 50  0001 C CNN
-	1    1500 3100
+P 1500 3200
+F 0 "#PWR0121" H 1500 2950 50  0001 C CNN
+F 1 "GND" H 1505 3027 50  0000 C CNN
+F 2 "" H 1500 3200 50  0001 C CNN
+F 3 "" H 1500 3200 50  0001 C CNN
+	1    1500 3200
+	1    0    0    -1  
+$EndComp
+Text Notes 600  2600 0    50   ~ 10
+***NOTE***
+Text Notes 500  3150 0    50   ~ 0
+When assembling WeMos\nRemove pins 11-14 from \nheader.  \nThey're tied to ground to\nimprove RF layout
+$Comp
+L Connector:USB_A J3
+U 1 1 5EB89E00
+P 1700 4800
+F 0 "J3" H 1757 5267 50  0000 C CNN
+F 1 "USB_A" H 1757 5176 50  0000 C CNN
+F 2 "esp8266-cc2530:Molex_48037-2200_USB-A" H 1850 4750 50  0001 C CNN
+F 3 "https://docs.rs-online.com/f411/0900766b812cbeb0.pdf" H 1850 4750 50  0001 C CNN
+	1    1700 4800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1500 3100 1650 3100
+	1600 5200 1650 5200
+$Comp
+L power:GND #PWR09
+U 1 1 5EB9A860
+P 1650 5200
+F 0 "#PWR09" H 1650 4950 50  0001 C CNN
+F 1 "GND" H 1655 5027 50  0000 C CNN
+F 2 "" H 1650 5200 50  0001 C CNN
+F 3 "" H 1650 5200 50  0001 C CNN
+	1    1650 5200
+	1    0    0    -1  
+$EndComp
+Connection ~ 1650 5200
 Wire Wire Line
-	1650 2800 1650 2900
-Connection ~ 1650 3100
-Connection ~ 1650 2900
+	1650 5200 1700 5200
+Connection ~ 2400 1750
+Wire Wire Line
+	2400 1750 2550 1750
+$Comp
+L projectLib:B5819W D1
+U 1 1 5EBAD6F6
+P 2400 2100
+F 0 "D1" V 2354 2179 50  0000 L CNN
+F 1 "B5819W" V 2445 2179 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 2400 1925 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Changjiang-Electronics-Tech-CJ-B5819W_C8598.pdf" H 2400 2100 50  0001 C CNN
+F 4 "C8598" H 2400 2100 50  0001 C CNN "LCSC"
+	1    2400 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2400 1950 2400 1750
+NoConn ~ 1650 3600
+NoConn ~ 1650 3500
+NoConn ~ 1650 3400
+NoConn ~ 1650 3300
+NoConn ~ 1650 2800
+NoConn ~ 1650 2700
+Wire Wire Line
+	1500 3200 1650 3200
+$Comp
+L power:GND #PWR0129
+U 1 1 5EBADD70
+P 2050 4000
+F 0 "#PWR0129" H 2050 3750 50  0001 C CNN
+F 1 "GND" H 2055 3827 50  0000 C CNN
+F 2 "" H 2050 4000 50  0001 C CNN
+F 3 "" H 2050 4000 50  0001 C CNN
+	1    2050 4000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2450 2800
 Wire Wire Line
 	1650 2900 1650 3000
 Connection ~ 1650 3000
 Wire Wire Line
+	1650 3100 1650 3200
+Wire Wire Line
 	1650 3000 1650 3100
-Text Notes 600  2600 0    50   ~ 10
-***NOTE***
-Text Notes 500  3050 0    50   ~ 0
-When assembling WeMos\nRemove pins 11-14 from \nheader.  \nThey're tied to ground to\nimprove RF layout
+Connection ~ 1650 3100
+Connection ~ 1650 3200
+$Comp
+L projectLib:WeMos_D1_mini U1
+U 1 1 5EC6ED24
+P 2050 3200
+F 0 "U1" H 1800 3950 50  0000 C CNN
+F 1 "WeMos_D1_mini" H 1750 2450 50  0000 C CNN
+F 2 "esp8266-cc2530:WEMOS_D1_mini_smt" H 2050 2050 50  0001 C CNN
+F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 200 2050 50  0001 C CNN
+	1    2050 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 2400 2400 2400
+Wire Wire Line
+	2400 2400 2400 2250
+Wire Wire Line
+	2800 2400 2800 4600
+Wire Wire Line
+	2150 1750 2150 2400
+Wire Wire Line
+	1950 1650 1950 2400
+Wire Notes Line
+	2150 2100 2000 2100
+Wire Notes Line
+	2000 2100 2000 2050
+Wire Notes Line
+	2000 2050 1900 2050
+Wire Notes Line
+	1900 2050 1900 2100
+Wire Notes Line
+	1900 2100 1500 2100
+Text Notes 900  2200 0    50   ~ 0
+Note:\n5V Out from \nWemos D1 has \ninternal diode
+NoConn ~ 2000 4800
+NoConn ~ 2000 4900
+Wire Wire Line
+	2350 4600 2800 4600
+Wire Wire Line
+	2000 4600 2350 4600
+Connection ~ 2350 4600
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5EC09F39
+P 2350 4600
+F 0 "#FLG0101" H 2350 4675 50  0001 C CNN
+F 1 "PWR_FLAG" H 2350 4773 50  0000 C CNN
+F 2 "" H 2350 4600 50  0001 C CNN
+F 3 "~" H 2350 4600 50  0001 C CNN
+	1    2350 4600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
