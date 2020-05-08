@@ -582,7 +582,7 @@ Wire Wire Line
 	9800 2050 9800 2400
 Connection ~ 9800 2400
 Text Notes 8500 950  0    50   ~ 0
-TODO\n* add test points\n* check usb pinout
+TODO\n* add test points
 $Comp
 L Device:C C3
 U 1 1 5EA96D19
